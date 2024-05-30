@@ -2,7 +2,11 @@
 export default {
     content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
+            },
+        },
     },
     plugins: [],
 };

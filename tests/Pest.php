@@ -12,9 +12,9 @@
 */
 
 uses(
-    Tests\TestCase::class,
-    // Illuminate\Foundation\Testing\RefreshDatabase::class,
-)->in('Feature');
+  Tests\TestCase::class,
+  Illuminate\Foundation\Testing\RefreshDatabase::class,
+)->in('Feature', 'Unit');
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ uses(
 */
 
 expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
+  return $this->toBe(1);
 });
 
 /*
@@ -44,5 +44,5 @@ expect()->extend('toBeOne', function () {
 
 function something()
 {
-    // ..
+  // ..
 }
