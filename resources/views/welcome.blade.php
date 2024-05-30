@@ -7,9 +7,9 @@
             <x-h2>Featured Jobs</x-h2>
 
             <div class="gap-8 lg:grid lg:grid-cols-3">
-                <x-card />
-                <x-card />
-                <x-card />
+                <x-job-card />
+                <x-job-card />
+                <x-job-card />
             </div>
         </section>
 

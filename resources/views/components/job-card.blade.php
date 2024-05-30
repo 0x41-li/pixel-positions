@@ -3,9 +3,9 @@
         <h3 class="text-lg font-bold">Laracasts</h3>
     </div>
 
-    <div class="space-y-1 text-center">
-        <h4 class="font-bold">Video Producer</h4>
-        <p class="font-bold">Full Time - From $60,000</p>
+    <div class="text-center">
+        <h4 class="text-lg font-bold">Video Producer</h4>
+        <p class="mt-4 text-sm">Full Time - From $60,000</p>
     </div>
 
     <div class="flex items-end justify-between self-stretch">
@@ -16,7 +16,8 @@
         </div>
 
         <div class="">
-            <img src="http://placehold.it/42/42" alt="">
+            <img class="rounded-md" src="http://picsum.photos/seed/{{ rand(1, 1000) }}/42"
+                alt="">
         </div>
     </div>
 </div>
