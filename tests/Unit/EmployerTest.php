@@ -1,15 +1,31 @@
 <?php
 
 use App\Models\Employer;
+use App\Models\Job;
 use App\Models\User;
 
-it('Belongs to a user', function () {
-  // Arange
+test('Belongs to a user', function () {
   $user = User::factory()->create();
   $employer = Employer::factory()->create([
     "user_id" => $user->id
   ]);
 
-  // Asset & Act
   expect($user->employer->is($employer))->toBeTrue();
+});
+
+test('Has many jobs', function () {
+  $user = User::factory()->create();
+  $employer = Employer::factory()->create([
+    "user_id" => $user->id
+  ]);
+  $jobs = Job::factory()->count(3)->create([
+    "employer_id" => $employer->id
+  ]);
+
+
+  expect($employer->jobs)->toHaveCount(3);
+
+  foreach ($jobs as $job) {
+    expect($job->employer_id)->toBe($employer->id);
+  }
 });
