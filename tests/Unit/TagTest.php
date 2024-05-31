@@ -9,7 +9,7 @@ test('Can belong to many jobs', function () {
   $tag = Tag::factory()->create();
   $user = User::factory()->create();
   $employer = Employer::factory()->create(['user_id' => $user->id]);
-  $jobs = Job::factory()->count(3)->create(['employer_id' => $employer->id]);
+  $jobs = Job::factory(3)->create(['employer_id' => $employer->id]);
 
   $tag->jobs()->attach($jobs);
 

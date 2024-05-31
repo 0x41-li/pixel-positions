@@ -1,4 +1,4 @@
-@props(['size' => 'small'])
+@props(['tag', 'size' => 'small'])
 
 
 @php
@@ -11,5 +11,5 @@
 @endphp
 
 <span class="{{ $classes }}">
-    {{ $slot }}
+    {{ $tag->name }}
 </span>

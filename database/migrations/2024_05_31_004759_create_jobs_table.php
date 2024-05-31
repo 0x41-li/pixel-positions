@@ -16,6 +16,7 @@ return new class extends Migration
       $table->id();
       $table->foreignIdFor(Employer::class)->constrained()->onDelete("cascade");
       $table->string('title');
+      $table->string('company');
       $table->string('salary');
       $table->string('location');
       $table->string('schedule');

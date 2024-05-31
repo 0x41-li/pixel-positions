@@ -18,7 +18,7 @@ test('Has many jobs', function () {
   $employer = Employer::factory()->create([
     "user_id" => $user->id
   ]);
-  $jobs = Job::factory()->count(3)->create([
+  $jobs = Job::factory(3)->create([
     "employer_id" => $employer->id
   ]);
 

@@ -17,7 +17,7 @@ test("Can belong to many tags", function () {
   $user = User::factory()->create();
   $employer = Employer::factory()->create(['user_id' => $user->id]);
   $job = Job::factory()->create(['employer_id' => $employer->id]);
-  $tags = Tag::factory()->count(3)->create();
+  $tags = Tag::factory(3)->create();
 
   $job->tags()->attach($tags);
 

@@ -18,6 +18,7 @@ class JobFactory extends Factory
   {
     return [
       'title' => $this->faker->title(),
+      'company' => $this->faker->company(),
       'salary' => $this->faker->randomElement(["$60,000", "$80,000", "$120,000"]),
       'location' => $this->faker->randomElement(["Remote", "In Site", "Hybrid"]),
       'schedule' => $this->faker->randomElement(["Full Time", "Part Time"]),
