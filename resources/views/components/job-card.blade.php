@@ -11,7 +11,7 @@
     </div>
 
     <div class="flex items-end justify-between self-stretch">
-        <div class="space-x-1">
+        <div class="flex flex-wrap gap-2">
             @foreach ($job->tags as $tag)
                 <x-tag :$tag />
             @endforeach
