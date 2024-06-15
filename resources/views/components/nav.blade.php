@@ -7,14 +7,22 @@
         </div>
 
         <div class="space-x-4">
-            <a href="" class="hover:underline">Jobs</a>
-            <a href="" class="hover:underline">Careers</a>
-            <a href="" class="hover:underline">Salaries</a>
-            <a href="" class="hover:underline">Companies</a>
+            <a href="/" class="hover:text-[#1544EF]">Jobs</a>
+            <a href="#" class="hover:text-[#1544EF]">Careers</a>
+            <a href="#" class="hover:text-[#1544EF]">Salaries</a>
+            <a href="#" class="hover:text-[#1544EF]">Companies</a>
         </div>
+        @guest
+            <div class="flex gap-4">
+                <a href="/register" class="hover:text-[#1544EF]">Register</a>
+                <a href="/login" class="hover:text-[#1544EF]">Login</a>
+            </div>
+        @endguest
 
-        <div class="">
-            <a href="" class="hover:underline">Post a Job</a>
-        </div>
+        @auth
+            <div class="">
+                <a href="/job/create" class="hover:text-[#1544EF]">Post a Job</a>
+            </div>
+        @endauth
     </nav>
 </div>

@@ -2,7 +2,7 @@
 
     <x-nav />
 
-    <main class="mx-auto max-w-screen-lg space-y-8">
+    <x-container>
         <section class="py-16">
             <div class="flex flex-col items-center gap-8">
                 <h1 class="text-4xl font-bold">Let's Find You A Great Job</h1>
@@ -40,7 +40,6 @@
                 @endforeach
             </div>
         </section>
-
-    </main>
+    </x-container>
 
 </x-layout>

@@ -19,7 +19,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black font-hanken-grotesk text-white">
+<body class="bg-black pb-16 font-hanken-grotesk text-white">
     {{ $slot }}
 </body>
 
