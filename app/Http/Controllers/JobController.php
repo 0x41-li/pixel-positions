@@ -18,8 +18,8 @@ class JobController extends Controller
 
 
         return view('jobs.index')->with([
-            "jobs" => $jobs[0] ?? [],
-            "featuredJobs" => $jobs[1] ?? [],
+            "jobs" => $jobs[0] ?? collect([]),
+            "featuredJobs" => $jobs[1] ?? collect([]),
             "tags" => Tag::all(),
         ]);
     }
