@@ -15,9 +15,13 @@
             <x-h2>Featured Jobs</x-h2>
 
             <div class="gap-8 lg:grid lg:grid-cols-3">
-                @foreach ($featuredJobs as $job)
-                    <x-job-card :$job />
-                @endforeach
+                @if (count($featuredJobs) === 0)
+                    <p class="text-white">No featured jobs at the moment.</p>
+                @else
+                    @foreach ($featuredJobs as $job)
+                        <x-job-card :$job />
+                    @endforeach
+                @endif
             </div>
         </section>
 
