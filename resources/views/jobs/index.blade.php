@@ -11,7 +11,7 @@
             </div>
         </section>
 
-        <section class="space-y-2">
+        <section class="space-y-4">
             <x-h2>Featured Jobs</x-h2>
 
             <div class="gap-8 lg:grid lg:grid-cols-3">
@@ -25,7 +25,7 @@
             </div>
         </section>
 
-        <section class="space-y-2">
+        <section class="space-y-4">
             <x-h2>Tags</x-h2>
 
             <div class="space-x-1">
@@ -39,7 +39,7 @@
             </div>
         </section>
 
-        <section class="space-y-2">
+        <section class="space-y-4">
             <x-h2>Recent Jobs</x-h2>
 
             <div class="space-y-4">
