@@ -3,7 +3,7 @@
     <x-nav />
 
     <x-container>
-        <section class="py-16">
+        <section class="pt-8 pb-4">
             <div class="flex flex-col items-center gap-8">
                 <h1 class="text-4xl font-bold">Let's Find You A Great Job</h1>
                 <input type="text" placeholder="I'm looking for..."
