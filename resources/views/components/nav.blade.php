@@ -1,5 +1,11 @@
-<div class="px-16 py-8">
-    <nav class="flex justify-between border-b border-white/20 pb-8">
+<div x-data="{
+    profileDropDownOpen: false,
+
+    toggleProfileDropDown: function() {
+        this.profileDropDownOpen = !this.profileDropDownOpen
+    }
+}" class="px-16 py-8">
+    <nav class="flex items-center justify-between border-b border-white/20 pb-8">
         <div class="">
             <a href="/">
                 <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="The logo">
@@ -20,8 +26,29 @@
         @endguest
 
         @auth
-            <div class="">
+            <div class="flex items-center gap-4">
                 <a href="/jobs/create" class="hover:text-[#1544EF]">Post a Job</a>
+                <div class="relative">
+                    <button @click="toggleProfileDropDown()"
+                        class="cursor-pointer rounded-full h-10 w-10 bg-red-500 flex items-center justify-center text-sm">
+                        {{ auth()->user()->getFirstLettersOfTheFirstTwoWordsOfTheUserName() }}
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div @click.outside="profileDropDownOpen = false" x-show="profileDropDownOpen" x-cloak
+                        class="absolute top-full right-0 z-10 mt-4 rounded-lg shadow-sm w-44 bg-zinc-900">
+                        <ul class="py-2 text-sm  aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Sign
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         @endauth
     </nav>

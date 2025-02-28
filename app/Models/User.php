@@ -10,38 +10,47 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-  use HasFactory, Notifiable;
+    use HasFactory, Notifiable;
 
-  /**
-   * The attributes that should be hidden for serialization.
-   *
-   * @var array<int, string>
-   */
-  protected $hidden = [
-    'password',
-    'remember_token',
-  ];
-
-  /**
-   * Get the attributes that should be cast.
-   *
-   * @return array<string, string>
-   */
-  protected function casts(): array
-  {
-    return [
-      'email_verified_at' => 'datetime',
-      'password' => 'hashed',
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
-  }
 
-  /**
-   * Get the Employer associated with the User
-   *
-   * @return \Illuminate\Database\Eloquent\Relations\HasOne
-   */
-  public function employer(): HasOne
-  {
-    return $this->hasOne(Employer::class);
-  }
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+    /**
+     * Get the Employer associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function employer(): HasOne
+    {
+        return $this->hasOne(Employer::class);
+    }
+
+    public function getFirstLettersOfTheFirstTwoWordsOfTheUserName(): string
+    {
+        return collect(explode(' ', $this->name))
+            ->filter()
+            ->take(2)
+            ->map(fn($word) => strtoupper(mb_substr($word, 0, 1)))
+            ->implode('');
+    }
 }

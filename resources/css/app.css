@@ -5,3 +5,5 @@
 * {
     @apply transition-all duration-200;
 }
+
+[x-cloak] { display: none !important; }
