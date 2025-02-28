@@ -1,10 +1,6 @@
-@props(['job'])
-
-<div
-    class="group flex gap-6 rounded-xl border border-transparent bg-white/5 px-6 py-6 hover:border-[#1544EF]">
-    <div class="">
-        <img class="rounded-md" src="http://picsum.photos/seed/{{ rand(1, 1000) }}/100" alt="">
-    </div>
+<div class="group flex gap-6 rounded-xl border border-transparent bg-white/5 px-6 py-6 hover:border-[#1544EF]">
+    <img class="rounded-lg w-14 h-14 max-w-full" src="{{ asset('/storage/' . $job->company_logo) }}"
+        alt="{{ $job->company }} Logo">
 
     <div class="flex flex-1 flex-col">
         <p class="text-sm text-gray-400">GovExec</p>
