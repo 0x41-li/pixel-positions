@@ -41,6 +41,10 @@ class JobController extends Controller
 
         $newJobValidatedData['employer_id'] = auth()->id();
 
+        if ($request->has('company_logo')) {
+            $newJobValidatedData['company_logo'] = $request->file('company_logo')->store('companies_logos', 'public');
+        }
+
         Job::create($newJobValidatedData);
 
         return redirect()->to('/');

@@ -5,7 +5,7 @@
     <x-container>
         <h1 class="mt-8 text-left text-4xl font-bold">Post A Job</h1>
 
-        <form action="/jobs/create" method="post" class="w-full flex flex-col gap-6">
+        <form action="/jobs/create" method="post" class="w-full flex flex-col gap-6" enctype="multipart/form-data">
             @csrf
 
             <div class="flex gap-4 [&>*]:flex-1">
@@ -27,6 +27,16 @@
                     value="{{ old('schedule') }}" placeholder="E.g. Full Time" />
                 <x-form.field id="url" label="URL" type="text" name="url" value="{{ old('url') }}"
                     placeholder="E.g. https://example.com/job-post" />
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <label for="company_logo">Company Logo</label>
+
+                <input type="file" name="company_logo" id="company_logo">
+
+                @error('company_logo')
+                    <x-form.error :message="$message" />
+                @enderror
             </div>
 
             <x-form.submit-button class="mt-4" value="Create" />
