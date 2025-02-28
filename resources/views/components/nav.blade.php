@@ -41,9 +41,13 @@
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Settings</a>
                             </li>
-                            <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Sign
-                                    out</a>
+                            <form action="/logout" method="post" class="">
+                                @csrf
+                                <button type="submit"
+                                    class="block w-full text-left px-4 py-2 hover:bg-zinc-800 hover:text-white">
+                                    Sign out
+                                </button>
+                            </form>
                             </li>
                         </ul>
                     </div>
