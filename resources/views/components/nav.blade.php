@@ -21,7 +21,7 @@
 
         @auth
             <div class="">
-                <a href="/job/create" class="hover:text-[#1544EF]">Post a Job</a>
+                <a href="/jobs/create" class="hover:text-[#1544EF]">Post a Job</a>
             </div>
         @endauth
     </nav>
