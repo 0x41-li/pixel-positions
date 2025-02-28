@@ -13,6 +13,11 @@
                     value="{{ auth()->user()->email }}" />
             </div>
 
+            <div class="mt-4">
+                <label for="company_logo" class="block">Profile Picture</label>
+                <input type="file" name="profile_picture" id="profile_picture" class="mt-2">
+            </div>
+
             <div class="mt-8">
                 <x-form.submit-button value="Save" />
             </div>
