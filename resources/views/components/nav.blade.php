@@ -39,10 +39,12 @@
                         class="absolute top-full right-0 z-10 mt-4 rounded-lg shadow-sm w-44 bg-zinc-900">
                         <ul class="py-2 text-sm  aria-labelledby="dropdownDefaultButton">
                             <li>
-                                <a href="#" class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Settings</a>
+                                <a href="{{ route('profile') }}"
+                                    class="block px-4 py-2 hover:bg-zinc-800 hover:text-white">Profile</a>
                             </li>
-                            <form action="/logout" method="post" class="">
+                            <form action="{{ route('logout') }}" method="post" class="">
                                 @csrf
+
                                 <button type="submit"
                                     class="block w-full text-left px-4 py-2 hover:bg-zinc-800 hover:text-white">
                                     Sign out

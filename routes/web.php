@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UserProfile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [JobController::class, 'index']);
@@ -16,7 +17,9 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/logout', [SessionController::class, 'logout']);
+    Route::post('/logout', [SessionController::class, 'logout'])->name('logout');
+
+    Route::get('/profile', [UserProfile::class, 'index'])->name('profile');
 
     Route::get('/jobs/create', [JobController::class, 'create']);
     Route::post('/jobs/create', [JobController::class, 'store']);
