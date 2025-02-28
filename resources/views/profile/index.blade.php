@@ -4,13 +4,15 @@
     <x-container>
         <h1 class="mt-8 text-left text-4xl font-bold">Profile</h1>
 
-        <form action="">
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+            @csrf
+
             <div class="flex [&>*]:flex-1 gap-8">
                 <x-form.field id="name" label="Name" name="name" type="text" value="{{ auth()->user()->name }}"
                     class="" />
 
                 <x-form.field id="email" label="Email" name="email" type="text"
-                    value="{{ auth()->user()->email }}" />
+                    value="{{ auth()->user()->email }}" class="disabled:bg-zinc-800 disabled:text-zinc-500" disabled />
             </div>
 
             <div class="mt-4">

@@ -30,8 +30,14 @@
                 <a href="/jobs/create" class="hover:text-[#1544EF]">Post a Job</a>
                 <div class="relative">
                     <button @click="toggleProfileDropDown()"
-                        class="cursor-pointer rounded-full h-10 w-10 bg-red-500 flex items-center justify-center text-sm">
-                        {{ auth()->user()->getFirstLettersOfTheFirstTwoWordsOfTheUserName() }}
+                        class="cursor-pointer rounded-full overflow-hidden h-10 w-10 border-white border flex items-center justify-center text-sm">
+                        @if (auth()->user()->profile_picture)
+                            <div class="w-full h-full bg-cover bg-no-repeat bg-center"
+                                style="background-image: url('{{ asset('/storage/' . auth()->user()->profile_picture) }}')">
+                            </div>
+                        @else
+                            {{ auth()->user()->getFirstLettersOfTheFirstTwoWordsOfTheUserName() }}
+                        @endif
                     </button>
 
                     <!-- Dropdown menu -->

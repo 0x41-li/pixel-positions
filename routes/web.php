@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [SessionController::class, 'logout'])->name('logout');
 
     Route::get('/profile', [UserProfile::class, 'index'])->name('profile');
+    Route::POST('/profile', [UserProfile::class, 'update']);
 
     Route::get('/jobs/create', [JobController::class, 'create']);
     Route::post('/jobs/create', [JobController::class, 'store']);

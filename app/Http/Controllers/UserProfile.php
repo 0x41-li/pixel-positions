@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\updateProfileRequest;
+use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -50,9 +52,19 @@ class UserProfile extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(updateProfileRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        if ($request->has('profile_picture')) {
+            $data['profile_picture'] = $request->file('profile_picture')->store('profile_pictures', 'public');
+        }
+
+        unset($data['email']);
+
+        User::find(auth()->user()->id)->update($data);
+
+        return redirect('profile');
     }
 
     /**
