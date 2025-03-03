@@ -15,14 +15,13 @@
                     value="{{ auth()->user()->email }}" class="disabled:bg-zinc-800 disabled:text-zinc-500" disabled />
             </div>
 
-            <div class="mt-4">
+            <div class="">
                 <label for="company_logo" class="block">Profile Picture</label>
-                <input type="file" name="profile_picture" id="profile_picture" class="mt-2">
-            </div>
+                <input type="file" name="profile_picture" id="profile_picture" accept="image/*" />
 
-            <div class="mt-8">
-                <x-form.submit-button value="Save" />
-            </div>
+                <div class="mt-8">
+                    <x-form.submit-button value="Save" />
+                </div>
         </form>
     </x-container>
 
