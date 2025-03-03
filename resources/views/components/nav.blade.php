@@ -1,3 +1,7 @@
+@php
+    $profile_picture = auth()->user()->profile_picture;
+@endphp
+
 <div x-data="{
     profileDropDownOpen: false,
 
@@ -30,10 +34,10 @@
                 <a href="/jobs/create" class="hover:text-[#1544EF]">Post a Job</a>
                 <div class="relative">
                     <button @click="toggleProfileDropDown()"
-                        class="cursor-pointer rounded-full overflow-hidden h-10 w-10 border-white border flex items-center justify-center text-sm">
-                        @if (auth()->user()->profile_picture)
+                        class="cursor-pointer rounded-full overflow-hidden h-10 w-10 border-white border-2 flex items-center justify-center text-sm">
+                        @if ($profile_picture)
                             <div class="w-full h-full bg-cover bg-no-repeat bg-center"
-                                style="background-image: url('{{ asset('/storage/' . auth()->user()->profile_picture) }}')">
+                                style="background-image: url('{{ asset('/storage/' . $profile_picture) }}')">
                             </div>
                         @else
                             {{ auth()->user()->getFirstLettersOfTheFirstTwoWordsOfTheUserName() }}
