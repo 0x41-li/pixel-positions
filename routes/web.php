@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [JobController::class, 'index']);
 
 Route::middleware('guest')->group(function () {
-    Route::get('/register', [RegisterController::class, 'create']);
+    Route::get('/register', [RegisterController::class, 'create'])->name("register");
     Route::post('/register', [RegisterController::class, 'store']);
 
-    Route::get('/login', [SessionController::class, 'create']);
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
     Route::post('/login', [SessionController::class, 'store']);
 });
 
