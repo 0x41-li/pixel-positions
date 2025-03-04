@@ -40,8 +40,8 @@
             </div>
 
 
-            <div class="mt-8">
-                <x-form.submit-button value="Save" />
+            <div class="flex justify-end">
+                <x-form.submit-button value="Save" class="basis-0 flex-shrink-0 flex-grow-0" />
             </div>
         </form>
     </x-container>

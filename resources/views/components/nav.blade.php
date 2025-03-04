@@ -8,8 +8,8 @@
     toggleProfileDropDown: function() {
         this.profileDropDownOpen = !this.profileDropDownOpen
     }
-}" class="px-16 py-8">
-    <nav class="flex items-center justify-between border-b border-white/20 pb-8">
+}" class="p-4 md:p-8 lg:px-16 lg:py-8 2xl:px-0 max-w-screen-2xl mx-auto">
+    <nav class="flex items-center justify-between border-b border-zinc-200 pb-4">
         <div class="">
             <a href="/">
                 <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="The logo">
