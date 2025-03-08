@@ -19,21 +19,21 @@
         </div>
 
         <div class="space-x-4">
-            <a href="/" class="hover:text-[#1544EF]">Jobs</a>
-            <a href="#" class="hover:text-[#1544EF]">Careers</a>
-            <a href="#" class="hover:text-[#1544EF]">Salaries</a>
-            <a href="#" class="hover:text-[#1544EF]">Companies</a>
+            <a href="/" class="hover:text-primary">Jobs</a>
+            <a href="#" class="hover:text-primary">Careers</a>
+            <a href="#" class="hover:text-primary">Salaries</a>
+            <a href="#" class="hover:text-primary">Companies</a>
         </div>
         @guest
             <div class="flex gap-4">
-                <a href="/register" class="hover:text-[#1544EF]">Register</a>
-                <a href="/login" class="hover:text-[#1544EF]">Login</a>
+                <a href="/register" class="hover:text-primary">Register</a>
+                <a href="/login" class="hover:text-primary">Login</a>
             </div>
         @endguest
 
         @auth
             <div class="flex items-center gap-4">
-                <a href="/jobs/create" class="hover:text-[#1544EF]">Post a Job</a>
+                <a href="/jobs/create" class="hover:text-primary">Post a Job</a>
                 <div class="relative">
                     <button @click="toggleProfileDropDown()"
                         class="cursor-pointer rounded-full overflow-hidden h-10 w-10 border-white border-2 flex items-center justify-center text-sm">

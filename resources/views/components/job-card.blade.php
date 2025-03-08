@@ -1,13 +1,13 @@
 @props(['job'])
 <div
-    class="group flex flex-col justify-between items-center gap-y-8 rounded-xl border border-transparent bg-white/5 px-6 py-6 hover:border-[#1544EF]">
+    class="group flex flex-col justify-between items-center gap-y-8 rounded-xl border border-transparent bg-white/5 px-6 py-6 hover:border-primary">
     <div class="flex flex-col gap-y-4">
         <div class="self-start">
             <h3 class="text-lg font-bold">{{ $job->company }}</h3>
         </div>
 
         <div class="text-center">
-            <h4 class="text-lg font-bold group-hover:text-[#1544EF]">{{ $job->title }}</h4>
+            <h4 class="text-lg font-bold group-hover:text-primary">{{ $job->title }}</h4>
             <p class="mt-4 text-sm">{{ $job->location }} - From {{ $job->salary }}</p>
         </div>
     </div>
