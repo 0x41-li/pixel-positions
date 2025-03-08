@@ -1,5 +1,7 @@
 @php
-    $profile_picture = auth()->user()->profile_picture ?? null;
+    if (auth()->check()) {
+        $profile_picture = auth()->user()->profile_picture;
+    }
 @endphp
 
 <div x-data="{
