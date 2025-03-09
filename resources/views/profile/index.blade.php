@@ -7,13 +7,17 @@
 
     <x-container>
         <div class="max-w-4xl mx-auto">
+            {{-- Title --}}
             <h1 class="mt-8 text-left text-4xl font-bold">Profile</h1>
 
-            <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data" class="mt-8">
+            {{-- Separator --}}
+            <hr class="block my-8 border-zinc-700" />
+
+            <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data" class="">
                 @csrf
                 @method('put')
 
-                {{-- Name and email inputs --}}
+                {{-- Name and email --}}
                 <div class="flex [&>*]:flex-1 gap-4">
                     <x-form.field id="name" label="Name" name="name" type="text"
                         value="{{ auth()->user()->name }}" class="" />
@@ -21,6 +25,41 @@
                     <x-form.field id="email" label="Email" name="email" type="text"
                         value="{{ auth()->user()->email }}" class="disabled:bg-zinc-800 disabled:text-zinc-500"
                         disabled />
+
+                </div>
+
+                {{-- Role --}}
+                <div class="flex [&>*]:flex-1 gap-4 mt-8">
+                    <div class="flex flex-col gap-2">
+                        <label for="role" class="">Select your role</label>
+
+                        <div class="relative max-w-md">
+                            <select id="role" name="role"
+                                class="appearance-none block w-full gap-2 border border-zinc-700 bg-zinc-900 placeholder-gray-400 text-white rounded-md px-4 py-2.5">
+                                <option {{ auth()->user()->role === 'job_seeker' ? 'selected' : null }}
+                                    value="job_seeker">Job
+                                    Seeker</option>
+                                <option {{ auth()->user()->role === 'employer' ? 'selected' : null }} value="employer">
+                                    Employer</option>
+                            </select>
+
+                            <div class="absolute top-1/2 right-4 -translate-y-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="h-6 w-6">
+                                    <path
+                                        d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            @error('role')
+                                <x-form.error :message="$message" />
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class=""></div>
                 </div>
 
                 {{-- Profile image image  --}}
@@ -89,6 +128,9 @@
                     </div>
 
                 </div>
+
+                {{-- Separator --}}
+                <hr class="block my-8 border-zinc-700" />
 
                 {{-- Save button --}}
                 <div class="flex justify-end">

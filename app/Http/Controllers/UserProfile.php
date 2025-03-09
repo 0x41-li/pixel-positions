@@ -73,7 +73,6 @@ class UserProfile extends Controller
      */
     public function destroy(string $id)
     {
-        dump(1);
         //
     }
 }
