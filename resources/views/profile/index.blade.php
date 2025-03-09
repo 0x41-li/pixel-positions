@@ -6,14 +6,12 @@
     <x-nav />
 
     <x-container>
-        <div class="max-w-4xl mx-auto">
+        <div class="">
             {{-- Title --}}
             <h1 class="mt-8 text-left text-4xl font-bold">Profile</h1>
 
-            {{-- Separator --}}
-            <hr class="block my-8 border-zinc-700" />
-
-            <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data" class="">
+            {{-- Form --}}
+            <form action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data" class="mt-8">
                 @csrf
                 @method('put')
 
@@ -33,7 +31,7 @@
                     <div class="flex flex-col gap-2">
                         <label for="role" class="">Select your role</label>
 
-                        <div class="relative max-w-md">
+                        <div class="relative">
                             <select id="role" name="role"
                                 class="appearance-none block w-full gap-2 border border-zinc-700 bg-zinc-900 placeholder-gray-400 text-white rounded-md px-4 py-2.5">
                                 <option {{ auth()->user()->role === 'job_seeker' ? 'selected' : null }}
@@ -129,12 +127,9 @@
 
                 </div>
 
-                {{-- Separator --}}
-                <hr class="block my-8 border-zinc-700" />
-
                 {{-- Save button --}}
                 <div class="flex justify-end">
-                    <x-form.submit-button value="Save" class="basis-0 flex-shrink-0 flex-grow-0" />
+                    <x-form.submit-button value="Save" class="basis-0 flex-shrink-0 flex-grow-0 mt-8" />
                 </div>
             </form>
         </div>
