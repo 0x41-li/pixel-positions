@@ -76,7 +76,7 @@
                         {{-- Deleting the preview or the image on the back end --}}
                         <div class="flex gap-4">
                             <label for="profile_picture_input"
-                                class="cursor-pointer rounded-md bg-primary px-6 py-2 font-bold text-white hover:bg-[#1c16c6]">
+                                class="cursor-pointer rounded-md bg-zinc-700 hover:bg-zinc-800 px-6 py-2 font-bold text-white">
                                 Upload Image
                             </label>
                         </div>
