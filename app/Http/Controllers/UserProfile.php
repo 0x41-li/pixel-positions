@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\updateProfileRequest;
+use App\Models\Employer;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -59,6 +60,10 @@ class UserProfile extends Controller
 
         if ($request->has('profile_picture')) {
             $data['profile_picture'] = $request->file('profile_picture')->store('profile_pictures', 'public');
+        }
+
+        if ($data['role'] === 'employer' && !auth()->user()->employer) {
+            Employer::create(['user_id' => auth()->user()->id]);
         }
 
         unset($data['email']);

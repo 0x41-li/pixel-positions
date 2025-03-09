@@ -24,6 +24,7 @@ class updateProfileRequest extends FormRequest
         return [
             'name' => ['required', 'string',  'max:255'],
             'email' => ['prohibited'],
+            'role' => ['string', 'in:job_seeker,employer'],
             'profile_picture' => ['nullable', 'image', 'mimes:png,jpg,jpeg', 'max:2048']
         ];
     }

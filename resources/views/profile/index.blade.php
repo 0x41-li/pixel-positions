@@ -35,10 +35,12 @@
                             <select id="role" name="role"
                                 class="appearance-none block w-full gap-2 border border-zinc-700 bg-zinc-900 placeholder-gray-400 text-white rounded-md px-4 py-2.5">
                                 <option {{ auth()->user()->role === 'job_seeker' ? 'selected' : null }}
-                                    value="job_seeker">Job
-                                    Seeker</option>
+                                    value="job_seeker">
+                                    Job Seeker
+                                </option>
                                 <option {{ auth()->user()->role === 'employer' ? 'selected' : null }} value="employer">
-                                    Employer</option>
+                                    Employer
+                                </option>
                             </select>
 
                             <div class="absolute top-1/2 right-4 -translate-y-1/2">
