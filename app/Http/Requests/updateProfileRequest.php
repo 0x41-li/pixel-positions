@@ -27,4 +27,13 @@ class updateProfileRequest extends FormRequest
             'profile_picture' => ['nullable', 'image', 'mimes:png,jpg,jpeg', 'max:2048']
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'profile_picture.image' => 'The profile picture must be an image.',
+            'profile_picture.mimes' => 'Only PNG, JPG, and JPEG files are allowed.',
+            'profile_picture.max' => 'The profile picture cannot be larger than 2MB.',
+        ];
+    }
 }

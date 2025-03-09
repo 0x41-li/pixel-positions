@@ -6,6 +6,7 @@ use App\Http\Requests\updateProfileRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserProfile extends Controller
 {
@@ -72,6 +73,7 @@ class UserProfile extends Controller
      */
     public function destroy(string $id)
     {
+        dump(1);
         //
     }
 }
